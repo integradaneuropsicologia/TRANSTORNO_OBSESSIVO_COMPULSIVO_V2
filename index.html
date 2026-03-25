@@ -330,25 +330,19 @@
    const AREA_PACIENTE_URL = "https://integradaneuropsicologia.github.io/area-do-paciente-v2/";
     const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-      const FREQ5   = ["Nunca","Raramente","Às vezes","Frequentemente", "Sempre", "Não se aplica"];
-    const SEVER4  = ["Não","Leve","Moderada","Grave", "Não se aplica"];
-    const YESNO   = ["Sim","Não", "Não se aplica"];
-    const YNP     = ["Sim","Não","Não sei", "Não se aplica"];
+const FREQ5   = ["Nunca","Raramente","Frequentemente", "Sempre", "Não se aplica"];
+const SEVER4  = ["Não","Leve","Moderada","Grave", "Não se aplica"];
+const YESNO   = ["Sim","Não", "Não se aplica"];
+const YNP     = ["Sim","Não","Não sei", "Não se aplica"];
 
-/**************************************************************
- * PONTUAÇÃO DAS ESCALAS
- * (null = não entra na soma)
- **************************************************************/
 const SCALE_SCORE_MAPS = {
   FREQ5: {
-    "Nunca":0,
-    "Raramente":1,
-    "Às vezes":2,
-    "Frequentemente":3,
-    "Sempre":4, 
-    "Não se aplica": null   
+    "Nunca": 0,
+    "Raramente": 1,
+    "Frequentemente": 2,
+    "Sempre": 3,
+    "Não se aplica": null
   },
-
 
   SEVER4: {
     "Não": 0,
@@ -357,11 +351,13 @@ const SCALE_SCORE_MAPS = {
     "Grave": 3,
     "Não se aplica": null
   },
+
   YESNO: {
     "Não": 0,
     "Sim": 1,
     "Não se aplica": null
   },
+
   YNP: {
     "Não": null,
     "Sim": null,
@@ -375,522 +371,343 @@ const SCALE_SCORE_MAPS = {
  **************************************************************/
 
 const FORM_QUESTIONS = [
-  
-{
-    name: "1",
-    section: "TOC — Triagem & História",
-    type: "radio",
-    text: "Você tem pensamentos, imagens ou impulsos intrusivos e indesejados que voltam repetidamente à sua mente?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+  {
+    name:"1",
+    section:"História e Curso",
+    type:"radio",
+    text:"Você tem pensamentos, imagens ou impulsos indesejados que entram na mente repetidamente, mesmo quando tenta não pensar nisso?",
+    options:YNP,
+    scale:"YNP"
   },
   {
-    name: "2",
-    section: "TOC — Triagem & História",
-    type: "radio",
-    text: "Você sente necessidade de fazer ações repetitivas, rituais ou atos mentais para reduzir sua ansiedade ou evitar que algo ruim aconteça?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"2",
+    section:"História e Curso",
+    type:"radio",
+    text:"Você sente necessidade de repetir ações, conferir coisas ou fazer rituais mentais para aliviar ansiedade, culpa, nojo ou sensação de que algo está errado?",
+    options:YNP,
+    scale:"YNP"
   },
   {
-    name: "3",
-    section: "TOC — Triagem & História",
-    type: "radio",
-    text: "Esses sintomas começaram ainda na infância ou adolescência?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"3",
+    section:"História e Curso",
+    type:"radio",
+    text:"Esses pensamentos repetitivos ou rituais começaram de forma lenta e foram aumentando ao longo do tempo?",
+    options:YNP,
+    scale:"YNP"
   },
   {
-    name: "4",
-    section: "TOC — Triagem & História",
-    type: "radio",
-    text: "Esses sintomas causam prejuízo importante em pelo menos dois contextos da sua vida, como casa, trabalho, estudos ou relações sociais?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"4",
+    section:"História e Curso",
+    type:"radio",
+    text:"Esses pensamentos repetitivos ou rituais estão presentes há muitos meses ou anos?",
+    options:YNP,
+    scale:"YNP"
   },
 
   {
-    name: "5",
-    section: "TOC — Obsessões (Temas)",
-    type: "radio",
-    text: "Você fica muito preocupado com contaminação, germes, sujeira ou doenças?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"5",
+    section:"Pensamentos Intrusivos",
+    type:"radio",
+    text:"Com que frequência pensamentos indesejados entram na sua mente contra a sua vontade e ficam voltando mesmo quando você tenta afastá-los?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "6",
-    section: "TOC — Obsessões (Temas)",
-    type: "radio",
-    text: "Você costuma ter dúvidas excessivas, culpa intensa ou medo de ter causado algum dano ou esquecido algo importante?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"6",
+    section:"Pensamentos Intrusivos",
+    type:"radio",
+    text:"Com que frequência você fica preso em dúvidas repetidas, como medo de ter feito algo errado, esquecido algo importante ou causado algum problema sem querer?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "7",
-    section: "TOC — Obsessões (Temas)",
-    type: "radio",
-    text: "Você sente grande incômodo quando as coisas não estão em ordem, alinhadas ou exatamente do jeito que deveriam estar?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"7",
+    section:"Pensamentos Intrusivos",
+    type:"radio",
+    text:"Com que frequência você tem medo excessivo de contaminação, sujeira, germes ou doenças ao tocar objetos, pessoas ou ambientes comuns?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "8",
-    section: "TOC — Obsessões (Temas)",
-    type: "radio",
-    text: "Você tem medo de machucar alguém sem querer, mesmo sem desejar fazer isso?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"8",
+    section:"Pensamentos Intrusivos",
+    type:"radio",
+    text:"Com que frequência você fica atormentado por pensamentos de que algo ruim pode acontecer se certas coisas não forem feitas do jeito certo?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "9",
-    section: "TOC — Obsessões (Temas)",
-    type: "radio",
-    text: "Você tem pensamentos sexuais intrusivos que considera inadequados, desagradáveis ou contrários ao que você acredita?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"9",
+    section:"Pensamentos Intrusivos",
+    type:"radio",
+    text:"Com que frequência você sente aflição intensa quando objetos não estão alinhados, simétricos, organizados ou colocados do jeito que considera correto?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "10",
-    section: "TOC — Obsessões (Temas)",
-    type: "radio",
-    text: "Você tem pensamentos religiosos ou blasfemos intrusivos, com medo de estar ofendendo a Deus ou cometendo algum pecado?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"10",
+    section:"Pensamentos Intrusivos",
+    type:"radio",
+    text:"Com que frequência você tem pensamentos, imagens ou impulsos agressivos, sexuais, religiosos ou moralmente inaceitáveis que considera estranhos, perturbadores ou contrários ao que você quer?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "11",
-    section: "TOC — Obsessões (Temas)",
-    type: "radio",
-    text: "Você fica excessivamente focado em sensações do corpo ou preocupado com doenças graves, mesmo sem evidências claras?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"11",
+    section:"Pensamentos Intrusivos",
+    type:"radio",
+    text:"Com que frequência você sente que precisa ter certeza absoluta sobre algo antes de conseguir se acalmar?",
+    options:FREQ5,
+    scale:"FREQ5"
+  },
+  {
+    name:"12",
+    section:"Pensamentos Intrusivos",
+    type:"radio",
+    text:"Com que frequência esses pensamentos repetitivos causam ansiedade, nojo, culpa, medo ou desconforto muito forte?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
 
   {
-    name: "12",
-    section: "TOC — Compulsões (Tipos)",
-    type: "radio",
-    text: "Você lava ou limpa as mãos, o corpo ou objetos de forma repetitiva para se sentir seguro ou aliviar a ansiedade?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"13",
+    section:"Rituais e Compulsões",
+    type:"radio",
+    text:"Com que frequência você lava as mãos, toma banho, limpa objetos ou evita contato por sentir necessidade de reduzir medo de sujeira, contaminação ou doença?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "13",
-    section: "TOC — Compulsões (Tipos)",
-    type: "radio",
-    text: "Você sente necessidade de checar repetidamente coisas como portas, gás, mensagens ou se fez algo errado?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"14",
+    section:"Rituais e Compulsões",
+    type:"radio",
+    text:"Com que frequência você confere repetidamente portas, gás, tomadas, documentos, mensagens, tarefas ou outros itens para tentar ter certeza de que está tudo certo?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "14",
-    section: "TOC — Compulsões (Tipos)",
-    type: "radio",
-    text: "Você precisa organizar, alinhar ou colocar objetos em ordem até sentir que ficou 'certo'?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"15",
+    section:"Rituais e Compulsões",
+    type:"radio",
+    text:"Com que frequência você repete ações, frases, leituras, toques, contagens ou movimentos até sentir que ficou certo, completo ou seguro?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "15",
-    section: "TOC — Compulsões (Tipos)",
-    type: "radio",
-    text: "Você conta, repete palavras, frases, números ou faz movimentos repetidos para aliviar desconforto?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"16",
+    section:"Rituais e Compulsões",
+    type:"radio",
+    text:"Com que frequência você organiza, alinha ou rearruma objetos até sentir que ficaram exatamente do jeito que deveriam estar?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "16",
-    section: "TOC — Compulsões (Tipos)",
-    type: "radio",
-    text: "Você faz rituais mentais, como rezar, neutralizar ou revisar coisas na mente, para tentar se sentir melhor ou evitar algo ruim?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"17",
+    section:"Rituais e Compulsões",
+    type:"radio",
+    text:"Com que frequência você precisa perguntar, pedir confirmação ou buscar garantia com outras pessoas para aliviar dúvidas ou medo de ter feito algo errado?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "17",
-    section: "TOC — Compulsões (Tipos)",
-    type: "radio",
-    text: "Você sente necessidade de confessar, pedir garantia ou confirmar repetidamente com outras pessoas se está tudo certo?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
-  },
-
-  {
-    name: "18",
-    section: "TOC — Evitação & Controle",
-    type: "radio",
-    text: "Você evita lugares, objetos ou situações que costumam disparar esses pensamentos ou desconfortos?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"18",
+    section:"Rituais e Compulsões",
+    type:"radio",
+    text:"Com que frequência você reza, conta, repete palavras mentalmente ou faz outros rituais na cabeça para tentar neutralizar pensamentos ruins ou evitar que algo ruim aconteça?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "19",
-    section: "TOC — Evitação & Controle",
-    type: "radio",
-    text: "Você segue regras pessoais muito rígidas para tentar evitar que algo ruim aconteça?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"19",
+    section:"Rituais e Compulsões",
+    type:"radio",
+    text:"Com que frequência você sente que precisa fazer um ritual até sentir alívio, mesmo sabendo que isso não faz muito sentido?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "20",
-    section: "TOC — Evitação & Controle",
-    type: "radio",
-    text: "Você usa comportamentos de segurança, como checar mais vezes, usar luvas ou ir acompanhado, para se sentir mais protegido?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"20",
+    section:"Rituais e Compulsões",
+    type:"radio",
+    text:"Com que frequência você percebe que um ritual alivia só por pouco tempo e logo a dúvida ou a aflição voltam?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
 
   {
-    name: "21",
-    section: "TOC — Tempo & Prejuízo",
-    type: "radio",
-    text: "Quanto tempo por dia você costuma gastar com esses pensamentos, rituais ou compulsões?",
-    options: ["Nenhum","< 1 hora","1–3 horas","> 3 horas"],
-    scale: null,
-    reverse: false,
-    required: false
+    name:"21",
+    section:"Evitação e Busca de Certeza",
+    type:"radio",
+    text:"Com que frequência você evita pessoas, objetos, lugares, assuntos ou atividades para não ativar pensamentos repetitivos, nojo, medo ou vontade de fazer rituais?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "22",
-    section: "TOC — Tempo & Prejuízo",
-    type: "radio",
-    text: "Quanto esses sintomas atrapalham seu desempenho, sua produtividade, seus horários ou seus relacionamentos?",
-    options: SEVER4,
-    scale: "SEVER4",
-    reverse: false,
-    required: false
+    name:"22",
+    section:"Evitação e Busca de Certeza",
+    type:"radio",
+    text:"Com que frequência você demora muito para tomar decisões porque sente necessidade de eliminar toda dúvida antes de agir?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "23",
-    section: "TOC — Tempo & Prejuízo",
-    type: "radio",
-    text: "Qual é o nível da sua angústia quando você é impedido de fazer esses rituais ou compulsões?",
-    options: SEVER4,
-    scale: "SEVER4",
-    reverse: false,
-    required: false
-  },
-
-  {
-    name: "24",
-    section: "TOC — Insight",
-    type: "radio",
-    text: "Até que ponto você percebe que esses pensamentos ou comportamentos podem ser excessivos, exagerados ou sem sentido?",
-    options: ["Bom/razoável","Parcial","Ruim","Ausente (convicção delirante)"],
-    scale: null,
-    reverse: false,
-    required: false
+    name:"23",
+    section:"Evitação e Busca de Certeza",
+    type:"radio",
+    text:"Com que frequência você volta atrás para conferir, corrigir, limpar, revisar ou refazer algo porque não conseguiu confiar que estava suficientemente certo?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "25",
-    section: "TOC — Curso",
-    type: "radio",
-    text: "Seus sintomas costumam piorar em períodos de estresse ou quando você dorme mal?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
-  },
-  {
-    name: "26",
-    section: "TOC — Curso",
-    type: "radio",
-    text: "Você ou alguém da sua família já teve tiques, como piscadas, movimentos repetidos ou sons involuntários?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"24",
+    section:"Evitação e Busca de Certeza",
+    type:"radio",
+    text:"Com que frequência você evita tocar, usar, sentar, vestir ou se aproximar de coisas comuns por medo de contaminação, erro, dano ou desconforto intenso?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
 
   {
-    name: "27",
-    section: "TOC — Diferencial",
-    type: "radio",
-    text: "Você já teve crenças muito estranhas ou difíceis de questionar, mesmo quando outras pessoas diziam que não faziam sentido?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"25",
+    section:"Insight e Resistência",
+    type:"radio",
+    text:"Você percebe que esses pensamentos repetitivos ou rituais são exagerados, estranhos ou maiores do que o necessário, mesmo assim sente dificuldade para controlar isso?",
+    options:YNP,
+    scale:"YNP"
   },
   {
-    name: "28",
-    section: "TOC — Diferencial",
-    type: "radio",
-    text: "Esses rituais ou comportamentos acontecem mais por prazer, curiosidade ou hábito do que por ansiedade ou medo?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"26",
+    section:"Insight e Resistência",
+    type:"radio",
+    text:"Você já tentou resistir a esses pensamentos repetitivos ou rituais, mas a ansiedade, o desconforto ou a sensação de que algo está errado ficaram muito fortes?",
+    options:YNP,
+    scale:"YNP"
   },
   {
-    name: "29",
-    section: "TOC — Diferencial",
-    type: "radio",
-    text: "Você se considera uma pessoa rigidamente perfeccionista de forma geral, mesmo sem ter pensamentos obsessivos ou compulsões claras?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"27",
+    section:"Insight e Resistência",
+    type:"radio",
+    text:"Com que frequência você sente que precisa obedecer ao ritual para conseguir seguir o dia ou se acalmar?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "30",
-    section: "TOC — Diferencial",
-    type: "radio",
-    text: "O início ou a piora desses sintomas pareceu acontecer junto com uso de substâncias ou medicações?",
-    options: ["Não","Estimulantes","Cocaína","Cannabis","Álcool","ISRS/Outras medicações","Outros"],
-    scale: null,
-    reverse: false,
-    required: false
+    name:"28",
+    section:"Insight e Resistência",
+    type:"radio",
+    text:"Com que frequência você luta mentalmente contra esses pensamentos repetitivos para tentar expulsá-los, neutralizá-los ou substituí-los por outros pensamentos?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
 
   {
-    name: "31",
-    section: "Dismórfico Corporal",
-    type: "radio",
-    text: "Você fica muito preocupado com algum defeito na sua aparência que outras pessoas quase não percebem ou nem veem?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"29",
+    section:"Tempo Gasto e Prejuízo",
+    type:"radio",
+    text:"Qual é a gravidade do prejuízo que esses pensamentos repetitivos ou rituais causam na sua rotina diária?",
+    options:SEVER4,
+    scale:"SEVER4"
   },
   {
-    name: "32",
-    section: "Dismórfico Corporal",
-    type: "radio",
-    text: "Você costuma checar espelho, tentar esconder, comparar ou tirar fotos por causa da sua aparência?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"30",
+    section:"Tempo Gasto e Prejuízo",
+    type:"radio",
+    text:"Qual é a gravidade do prejuízo que esses pensamentos repetitivos ou rituais causam no seu trabalho ou nos seus estudos?",
+    options:SEVER4,
+    scale:"SEVER4"
   },
   {
-    name: "33",
-    section: "Dismórfico Corporal",
-    type: "radio",
-    text: "Você evita sair, se expor socialmente ou tirar fotos por causa da sua aparência?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"31",
+    section:"Tempo Gasto e Prejuízo",
+    type:"radio",
+    text:"Qual é a gravidade do prejuízo que esses pensamentos repetitivos ou rituais causam nos seus relacionamentos ou convivência com outras pessoas?",
+    options:SEVER4,
+    scale:"SEVER4"
   },
   {
-    name: "34",
-    section: "Dismórfico Corporal",
-    type: "radio",
-    text: "Você já gastou muito tempo ou dinheiro com procedimentos estéticos sem sentir alívio duradouro?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"32",
+    section:"Tempo Gasto e Prejuízo",
+    type:"radio",
+    text:"Com que frequência esses pensamentos repetitivos ou rituais tomam tanto tempo que atrasam tarefas, compromissos ou decisões importantes?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
 
   {
-    name: "35",
-    section: "Acumulação",
-    type: "radio",
-    text: "Você sente muita dificuldade para jogar fora objetos, mesmo quando eles têm pouco ou nenhum valor real?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"33",
+    section:"Temas Comuns de TOC",
+    type:"radio",
+    text:"Com que frequência você teme causar dano sem querer a alguém por descuido, esquecimento, irresponsabilidade ou falta de conferência?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "36",
-    section: "Acumulação",
-    type: "radio",
-    text: "O acúmulo ou a desorganização de objetos já comprometeu seu espaço em casa ou no trabalho?",
-    options: SEVER4,
-    scale: "SEVER4",
-    reverse: false,
-    required: false
+    name:"34",
+    section:"Temas Comuns de TOC",
+    type:"radio",
+    text:"Com que frequência você sente necessidade de fazer tudo de forma perfeita ou exata para evitar erro, culpa ou sensação de que algo ficou incompleto?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "37",
-    section: "Acumulação",
-    type: "radio",
-    text: "Você sente muita angústia ou trava quando tenta organizar ou se desfazer de objetos?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"35",
+    section:"Temas Comuns de TOC",
+    type:"radio",
+    text:"Com que frequência você fica preso em pensamentos sobre certo e errado, culpa, moralidade, religião ou responsabilidade de um jeito que não consegue desligar?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
   {
-    name: "38",
-    section: "Acumulação",
-    type: "radio",
-    text: "Esse acúmulo já trouxe riscos para sua segurança, higiene ou circulação dentro do ambiente?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"36",
+    section:"Temas Comuns de TOC",
+    type:"radio",
+    text:"Com que frequência você revisa mentalmente conversas, atitudes ou decisões para tentar ter certeza de que não errou, não ofendeu ninguém ou não fez algo grave?",
+    options:FREQ5,
+    scale:"FREQ5"
   },
 
   {
-    name: "39",
-    section: "Tricotilomania",
-    type: "radio",
-    text: "Você arranca cabelos ou pelos de forma repetitiva, a ponto de causar falhas visíveis?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"37",
+    section:"Diferencial e Exclusões",
+    type:"radio",
+    text:"Esses pensamentos repetitivos ou rituais aparecem principalmente porque você acha que eles refletem de verdade quem você é ou o que você deseja fazer?",
+    options:YNP,
+    scale:"YNP"
   },
   {
-    name: "40",
-    section: "Tricotilomania",
-    type: "radio",
-    text: "Isso costuma aumentar quando você está ansioso ou tenso, e depois vem alguma sensação de alívio?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"38",
+    section:"Diferencial e Exclusões",
+    type:"radio",
+    text:"Esses pensamentos repetitivos ou rituais começaram ou pioraram claramente após uso de álcool, maconha, cocaína, estimulantes ou outras drogas?",
+    options:YNP,
+    scale:"YNP"
   },
   {
-    name: "41",
-    section: "Tricotilomania",
-    type: "radio",
-    text: "Você já tentou parar ou reduzir esse comportamento, mas não conseguiu?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
-  },
-
-  {
-    name: "42",
-    section: "Escoriação (Skin Picking)",
-    type: "radio",
-    text: "Você cutuca, arranha ou mexe na pele repetidamente a ponto de causar feridas ou lesões?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"39",
+    section:"Diferencial e Exclusões",
+    type:"radio",
+    text:"Esses pensamentos repetitivos ou rituais começaram ou pioraram claramente após uso de remédios, hormônios, corticoides ou outras medicações?",
+    options:YNP,
+    scale:"YNP"
   },
   {
-    name: "43",
-    section: "Escoriação (Skin Picking)",
-    type: "radio",
-    text: "Esse comportamento costuma aumentar quando você está tenso ou ansioso, e depois traz algum alívio?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
+    name:"40",
+    section:"Diferencial e Exclusões",
+    type:"radio",
+    text:"Esses pensamentos repetitivos ou rituais começaram ou pioraram junto com alguma doença neurológica, febre alta, infecção, convulsão, trauma na cabeça ou outra condição médica importante?",
+    options:YNP,
+    scale:"YNP"
   },
   {
-    name: "44",
-    section: "Escoriação (Skin Picking)",
-    type: "radio",
-    text: "Você já usou maquiagem, roupas ou outros recursos para esconder essas lesões?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
-  },
-
-  {
-    name: "45",
-    section: "TOC — Comorbidades & Risco",
-    type: "radio",
-    text: "Você também tem sintomas importantes de ansiedade ou depressão junto com esses problemas?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
-  },
-  {
-    name: "46",
-    section: "TOC — Comorbidades & Risco",
-    type: "radio",
-    text: "Em algum momento desse quadro, você já teve pensamentos de morte ou ideação suicida?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
-  },
-  {
-    name: "47",
-    section: "TOC — Comorbidades & Risco",
-    type: "radio",
-    text: "Você já recebeu ou suspeita de algum diagnóstico do neurodesenvolvimento, como TDAH ou TEA?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
-  },
-
-  {
-    name: "48",
-    section: "TOC — Estratégias & Tratamento",
-    type: "radio",
-    text: "Você já tentou algum tratamento para isso, como terapia cognitivo-comportamental, exposição com prevenção de resposta ou medicação?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
-  },
-  {
-    name: "49",
-    section: "TOC — Estratégias & Tratamento",
-    type: "radio",
-    text: "Você já teve dificuldade para aderir ao tratamento por medo de piorar ou por receio de efeitos colaterais?",
-    options: YNP,
-    scale: "YNP",
-    reverse: false,
-    required: false
-  },
-  {
-    name: "50",
-    section: "TOC — Estratégias & Tratamento",
-    type: "radio",
-    text: "Você costuma usar estratégias de enfrentamento, como hierarquia de exposição, registros ou timers, para lidar com esses sintomas?",
-    options: FREQ5,
-    scale: "FREQ5",
-    reverse: false,
-    required: false
+    name:"41",
+    section:"História Familiar",
+    type:"radio",
+    text:"Há pessoas na sua família com pensamentos repetitivos, rituais, medo excessivo de contaminação, necessidade de conferir tudo ou diagnóstico de TOC?",
+    options:YNP,
+    scale:"YNP"
   }
-
 ];
-
+    
 const INDICATORS_CONFIG = {};
 
     /**************************************************************
