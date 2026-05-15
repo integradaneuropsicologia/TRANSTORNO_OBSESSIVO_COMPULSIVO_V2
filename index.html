@@ -373,338 +373,666 @@ const SCALE_SCORE_MAPS = {
 const FORM_QUESTIONS = [
   {
     name:"1",
-    section:"História e Curso",
+    section:"Triagem Inicial",
     type:"radio",
-    text:"Você tem pensamentos, imagens ou impulsos indesejados que entram na mente repetidamente, mesmo quando tenta não pensar nisso?",
+    text:"Você tem pensamentos, imagens ou impulsos repetitivos, indesejados e difíceis de controlar que entram na sua mente contra a sua vontade?",
     options:YNP,
-    scale:"YNP"
+    scale:"YNP",
+    required:false
   },
   {
     name:"2",
-    section:"História e Curso",
+    section:"Triagem Inicial",
     type:"radio",
-    text:"Você sente necessidade de repetir ações, conferir coisas ou fazer rituais mentais para aliviar ansiedade, culpa, nojo ou sensação de que algo está errado?",
+    text:"Você realiza ações repetidas ou rituais mentais para aliviar ansiedade, culpa, medo, nojo, dúvida ou sensação de que algo está errado?",
     options:YNP,
-    scale:"YNP"
+    scale:"YNP",
+    required:false
   },
   {
     name:"3",
-    section:"História e Curso",
+    section:"Triagem Inicial",
     type:"radio",
-    text:"Esses pensamentos repetitivos ou rituais começaram de forma lenta e foram aumentando ao longo do tempo?",
+    text:"Você sente que precisa fazer certas ações ou pensamentos repetidos mesmo sabendo que eles podem ser exagerados ou desnecessários?",
     options:YNP,
-    scale:"YNP"
+    scale:"YNP",
+    required:false
   },
   {
     name:"4",
-    section:"História e Curso",
+    section:"Triagem Inicial",
     type:"radio",
-    text:"Esses pensamentos repetitivos ou rituais estão presentes há muitos meses ou anos?",
+    text:"Você tenta resistir aos pensamentos repetitivos ou aos rituais, mas sente ansiedade, desconforto ou medo intenso quando não consegue realizá-los?",
     options:YNP,
-    scale:"YNP"
+    scale:"YNP",
+    required:false
   },
 
   {
     name:"5",
-    section:"Pensamentos Intrusivos",
+    section:"Início e Curso",
     type:"radio",
-    text:"Com que frequência pensamentos indesejados entram na sua mente contra a sua vontade e ficam voltando mesmo quando você tenta afastá-los?",
-    options:FREQ5,
-    scale:"FREQ5"
+    text:"Seus pensamentos repetitivos, imagens indesejadas, impulsos intrusivos ou rituais começaram há muitos meses ou anos?",
+    options:YNP,
+    scale:"YNP",
+    required:false
   },
   {
     name:"6",
-    section:"Pensamentos Intrusivos",
+    section:"Início e Curso",
     type:"radio",
-    text:"Com que frequência você fica preso em dúvidas repetidas, como medo de ter feito algo errado, esquecido algo importante ou causado algum problema sem querer?",
-    options:FREQ5,
-    scale:"FREQ5"
+    text:"Seus pensamentos repetitivos, imagens indesejadas, impulsos intrusivos ou rituais começaram de forma gradual e foram aumentando ao longo do tempo?",
+    options:YNP,
+    scale:"YNP",
+    required:false
   },
   {
     name:"7",
-    section:"Pensamentos Intrusivos",
+    section:"Início e Curso",
     type:"radio",
-    text:"Com que frequência você tem medo excessivo de contaminação, sujeira, germes ou doenças ao tocar objetos, pessoas ou ambientes comuns?",
-    options:FREQ5,
-    scale:"FREQ5"
+    text:"Seus pensamentos repetitivos, imagens indesejadas, impulsos intrusivos ou rituais aparecem em diferentes contextos, como casa, trabalho, estudos, relacionamentos ou vida social?",
+    options:YNP,
+    scale:"YNP",
+    required:false
   },
   {
     name:"8",
-    section:"Pensamentos Intrusivos",
+    section:"Início e Curso",
     type:"radio",
-    text:"Com que frequência você fica atormentado por pensamentos de que algo ruim pode acontecer se certas coisas não forem feitas do jeito certo?",
-    options:FREQ5,
-    scale:"FREQ5"
-  },
-  {
-    name:"9",
-    section:"Pensamentos Intrusivos",
-    type:"radio",
-    text:"Com que frequência você sente aflição intensa quando objetos não estão alinhados, simétricos, organizados ou colocados do jeito que considera correto?",
-    options:FREQ5,
-    scale:"FREQ5"
-  },
-  {
-    name:"10",
-    section:"Pensamentos Intrusivos",
-    type:"radio",
-    text:"Com que frequência você tem pensamentos, imagens ou impulsos agressivos, sexuais, religiosos ou moralmente inaceitáveis que considera estranhos, perturbadores ou contrários ao que você quer?",
-    options:FREQ5,
-    scale:"FREQ5"
-  },
-  {
-    name:"11",
-    section:"Pensamentos Intrusivos",
-    type:"radio",
-    text:"Com que frequência você sente que precisa ter certeza absoluta sobre algo antes de conseguir se acalmar?",
-    options:FREQ5,
-    scale:"FREQ5"
-  },
-  {
-    name:"12",
-    section:"Pensamentos Intrusivos",
-    type:"radio",
-    text:"Com que frequência esses pensamentos repetitivos causam ansiedade, nojo, culpa, medo ou desconforto muito forte?",
-    options:FREQ5,
-    scale:"FREQ5"
+    text:"Pessoas próximas já perceberam que você repete ações, confere coisas, busca garantias, evita situações ou fica preso em dúvidas de forma excessiva?",
+    options:YNP,
+    scale:"YNP",
+    required:false
   },
 
   {
-    name:"13",
-    section:"Rituais e Compulsões",
+    name:"9",
+    section:"Obsessões — Pensamentos Intrusivos",
     type:"radio",
-    text:"Com que frequência você lava as mãos, toma banho, limpa objetos ou evita contato por sentir necessidade de reduzir medo de sujeira, contaminação ou doença?",
+    text:"Você tem pensamentos indesejados que aparecem repetidamente mesmo quando tenta ignorar, afastar ou controlar esses pensamentos?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
   {
-    name:"14",
-    section:"Rituais e Compulsões",
+    name:"10",
+    section:"Obsessões — Pensamentos Intrusivos",
     type:"radio",
-    text:"Com que frequência você confere repetidamente portas, gás, tomadas, documentos, mensagens, tarefas ou outros itens para tentar ter certeza de que está tudo certo?",
+    text:"Você tem imagens mentais perturbadoras que surgem contra sua vontade e causam ansiedade, medo, culpa, nojo ou desconforto intenso?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
+  },
+  {
+    name:"11",
+    section:"Obsessões — Pensamentos Intrusivos",
+    type:"radio",
+    text:"Você tem impulsos indesejados de fazer algo agressivo, sexual, moralmente errado, religioso ou perigoso, mesmo sem querer realizar esses impulsos?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+  {
+    name:"12",
+    section:"Obsessões — Pensamentos Intrusivos",
+    type:"radio",
+    text:"Você sente que os pensamentos, imagens ou impulsos intrusivos são contrários aos seus valores, desejos ou intenções reais?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+  {
+    name:"13",
+    section:"Obsessões — Pensamentos Intrusivos",
+    type:"radio",
+    text:"Você tenta neutralizar pensamentos, imagens ou impulsos indesejados com outros pensamentos, frases, orações, contagens, conferências ou ações repetidas?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+
+  {
+    name:"14",
+    section:"Obsessões — Dúvida e Responsabilidade",
+    type:"radio",
+    text:"Você fica preso em dúvidas repetidas sobre ter esquecido algo, errado algo, causado dano ou deixado alguma situação insegura?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"15",
-    section:"Rituais e Compulsões",
+    section:"Obsessões — Dúvida e Responsabilidade",
     type:"radio",
-    text:"Com que frequência você repete ações, frases, leituras, toques, contagens ou movimentos até sentir que ficou certo, completo ou seguro?",
+    text:"Você sente medo excessivo de ser responsável por acidentes, prejuízos, doenças, erros graves ou sofrimento de outras pessoas por descuido seu?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"16",
-    section:"Rituais e Compulsões",
+    section:"Obsessões — Dúvida e Responsabilidade",
     type:"radio",
-    text:"Com que frequência você organiza, alinha ou rearruma objetos até sentir que ficaram exatamente do jeito que deveriam estar?",
+    text:"Você sente necessidade de ter certeza absoluta antes de conseguir encerrar uma tarefa, decisão, conversa ou responsabilidade?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"17",
-    section:"Rituais e Compulsões",
+    section:"Obsessões — Dúvida e Responsabilidade",
     type:"radio",
-    text:"Com que frequência você precisa perguntar, pedir confirmação ou buscar garantia com outras pessoas para aliviar dúvidas ou medo de ter feito algo errado?",
+    text:"Você revisa mentalmente conversas, decisões ou atitudes para ter certeza de que não errou, não ofendeu alguém ou não fez algo grave?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
+
   {
     name:"18",
-    section:"Rituais e Compulsões",
+    section:"Obsessões — Contaminação",
     type:"radio",
-    text:"Com que frequência você reza, conta, repete palavras mentalmente ou faz outros rituais na cabeça para tentar neutralizar pensamentos ruins ou evitar que algo ruim aconteça?",
+    text:"Você tem medo excessivo de contaminação, germes, sujeira, secreções, produtos químicos, doenças ou impureza ao tocar objetos, pessoas ou ambientes comuns?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"19",
-    section:"Rituais e Compulsões",
+    section:"Obsessões — Contaminação",
     type:"radio",
-    text:"Com que frequência você sente que precisa fazer um ritual até sentir alívio, mesmo sabendo que isso não faz muito sentido?",
+    text:"Você sente nojo, ansiedade ou desconforto intenso após tocar objetos, roupas, superfícies, dinheiro, maçanetas, banheiros ou outras pessoas?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"20",
-    section:"Rituais e Compulsões",
+    section:"Obsessões — Contaminação",
     type:"radio",
-    text:"Com que frequência você percebe que um ritual alivia só por pouco tempo e logo a dúvida ou a aflição voltam?",
+    text:"Você evita tocar, usar, vestir, sentar ou se aproximar de objetos ou lugares por medo de contaminação, sujeira, doença ou desconforto intenso?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
 
   {
     name:"21",
-    section:"Evitação e Busca de Certeza",
+    section:"Obsessões — Simetria, Ordem e Exatidão",
     type:"radio",
-    text:"Com que frequência você evita pessoas, objetos, lugares, assuntos ou atividades para não ativar pensamentos repetitivos, nojo, medo ou vontade de fazer rituais?",
+    text:"Você sente ansiedade ou desconforto intenso quando objetos não estão alinhados, simétricos, organizados ou colocados exatamente do jeito que você considera correto?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"22",
-    section:"Evitação e Busca de Certeza",
+    section:"Obsessões — Simetria, Ordem e Exatidão",
     type:"radio",
-    text:"Com que frequência você demora muito para tomar decisões porque sente necessidade de eliminar toda dúvida antes de agir?",
+    text:"Você sente que algo fica incompleto, errado ou insuportável quando uma ação não é feita na ordem, quantidade, posição ou forma exata?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"23",
-    section:"Evitação e Busca de Certeza",
+    section:"Obsessões — Simetria, Ordem e Exatidão",
     type:"radio",
-    text:"Com que frequência você volta atrás para conferir, corrigir, limpar, revisar ou refazer algo porque não conseguiu confiar que estava suficientemente certo?",
+    text:"Você sente necessidade de repetir uma ação até ter uma sensação interna de que ficou certo, completo, seguro ou equilibrado?",
     options:FREQ5,
-    scale:"FREQ5"
-  },
-  {
-    name:"24",
-    section:"Evitação e Busca de Certeza",
-    type:"radio",
-    text:"Com que frequência você evita tocar, usar, sentar, vestir ou se aproximar de coisas comuns por medo de contaminação, erro, dano ou desconforto intenso?",
-    options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
 
   {
-    name:"25",
-    section:"Insight e Resistência",
+    name:"24",
+    section:"Obsessões — Temas Agressivos, Sexuais, Religiosos ou Morais",
     type:"radio",
-    text:"Você percebe que esses pensamentos repetitivos ou rituais são exagerados, estranhos ou maiores do que o necessário, mesmo assim sente dificuldade para controlar isso?",
-    options:YNP,
-    scale:"YNP"
+    text:"Você tem pensamentos ou imagens indesejadas de machucar alguém, perder o controle, causar dano ou fazer algo violento contra sua vontade?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+  {
+    name:"25",
+    section:"Obsessões — Temas Agressivos, Sexuais, Religiosos ou Morais",
+    type:"radio",
+    text:"Você tem pensamentos, imagens ou impulsos sexuais indesejados que considera perturbadores, inadequados, inaceitáveis ou contrários aos seus valores?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"26",
-    section:"Insight e Resistência",
+    section:"Obsessões — Temas Agressivos, Sexuais, Religiosos ou Morais",
     type:"radio",
-    text:"Você já tentou resistir a esses pensamentos repetitivos ou rituais, mas a ansiedade, o desconforto ou a sensação de que algo está errado ficaram muito fortes?",
-    options:YNP,
-    scale:"YNP"
+    text:"Você tem pensamentos religiosos, morais ou de culpa que voltam repetidamente e fazem você sentir medo de pecado, punição, impureza, falha moral ou condenação?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"27",
-    section:"Insight e Resistência",
+    section:"Obsessões — Temas Agressivos, Sexuais, Religiosos ou Morais",
     type:"radio",
-    text:"Com que frequência você sente que precisa obedecer ao ritual para conseguir seguir o dia ou se acalmar?",
+    text:"Você tenta neutralizar pensamentos agressivos, sexuais, religiosos ou morais com orações, frases, confissões, checagens, pedidos de garantia ou rituais mentais?",
     options:FREQ5,
-    scale:"FREQ5"
-  },
-  {
-    name:"28",
-    section:"Insight e Resistência",
-    type:"radio",
-    text:"Com que frequência você luta mentalmente contra esses pensamentos repetitivos para tentar expulsá-los, neutralizá-los ou substituí-los por outros pensamentos?",
-    options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
 
   {
-    name:"29",
-    section:"Tempo Gasto e Prejuízo",
+    name:"28",
+    section:"Compulsões — Limpeza e Lavagem",
     type:"radio",
-    text:"Qual é a gravidade do prejuízo que esses pensamentos repetitivos ou rituais causam na sua rotina diária?",
-    options:SEVER4,
-    scale:"SEVER4"
+    text:"Você lava as mãos, toma banho, troca roupas ou limpa partes do corpo repetidamente para aliviar medo de sujeira, contaminação, doença, nojo ou impureza?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+  {
+    name:"29",
+    section:"Compulsões — Limpeza e Lavagem",
+    type:"radio",
+    text:"Você limpa objetos, superfícies, roupas, celular, alimentos, documentos ou ambientes de forma repetida até sentir alívio ou segurança?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"30",
-    section:"Tempo Gasto e Prejuízo",
+    section:"Compulsões — Limpeza e Lavagem",
     type:"radio",
-    text:"Qual é a gravidade do prejuízo que esses pensamentos repetitivos ou rituais causam no seu trabalho ou nos seus estudos?",
-    options:SEVER4,
-    scale:"SEVER4"
+    text:"Você gasta tempo excessivo com banho, lavagem, limpeza ou descontaminação mesmo quando outras pessoas consideram isso desnecessário?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
+
   {
     name:"31",
-    section:"Tempo Gasto e Prejuízo",
+    section:"Compulsões — Checagem",
     type:"radio",
-    text:"Qual é a gravidade do prejuízo que esses pensamentos repetitivos ou rituais causam nos seus relacionamentos ou convivência com outras pessoas?",
-    options:SEVER4,
-    scale:"SEVER4"
+    text:"Você confere repetidamente portas, janelas, gás, fogão, tomadas, documentos, mensagens, tarefas ou objetos para ter certeza de que nada deu errado?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"32",
-    section:"Tempo Gasto e Prejuízo",
+    section:"Compulsões — Checagem",
     type:"radio",
-    text:"Com que frequência esses pensamentos repetitivos ou rituais tomam tanto tempo que atrasam tarefas, compromissos ou decisões importantes?",
+    text:"Você volta várias vezes para verificar algo mesmo depois de já ter conferido e saber racionalmente que provavelmente estava certo?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
+  },
+  {
+    name:"33",
+    section:"Compulsões — Checagem",
+    type:"radio",
+    text:"Você pede confirmação repetidamente a outras pessoas para ter certeza de que não errou, não causou dano, não esqueceu algo ou não fez algo inadequado?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
 
   {
-    name:"33",
-    section:"Temas Comuns de TOC",
-    type:"radio",
-    text:"Com que frequência você teme causar dano sem querer a alguém por descuido, esquecimento, irresponsabilidade ou falta de conferência?",
-    options:FREQ5,
-    scale:"FREQ5"
-  },
-  {
     name:"34",
-    section:"Temas Comuns de TOC",
+    section:"Compulsões — Repetição, Contagem e Rituais Mentais",
     type:"radio",
-    text:"Com que frequência você sente necessidade de fazer tudo de forma perfeita ou exata para evitar erro, culpa ou sensação de que algo ficou incompleto?",
+    text:"Você repete ações, palavras, frases, leituras, movimentos, toques ou sequências até sentir que ficaram certas ou seguras?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"35",
-    section:"Temas Comuns de TOC",
+    section:"Compulsões — Repetição, Contagem e Rituais Mentais",
     type:"radio",
-    text:"Com que frequência você fica preso em pensamentos sobre certo e errado, culpa, moralidade, religião ou responsabilidade de um jeito que não consegue desligar?",
+    text:"Você conta números, repete palavras, faz orações, frases ou imagens mentais para reduzir ansiedade, culpa, medo ou sensação de ameaça?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"36",
-    section:"Temas Comuns de TOC",
+    section:"Compulsões — Repetição, Contagem e Rituais Mentais",
     type:"radio",
-    text:"Com que frequência você revisa mentalmente conversas, atitudes ou decisões para tentar ter certeza de que não errou, não ofendeu ninguém ou não fez algo grave?",
+    text:"Você sente que precisa refazer uma ação porque ela não pareceu correta, completa, segura ou mentalmente aceitável na primeira vez?",
     options:FREQ5,
-    scale:"FREQ5"
+    scale:"FREQ5",
+    required:false
+  },
+  {
+    name:"37",
+    section:"Compulsões — Repetição, Contagem e Rituais Mentais",
+    type:"radio",
+    text:"Você realiza rituais mentais escondidos, como repetir frases, revisar lembranças, neutralizar pensamentos ou substituir ideias ruins por ideias boas?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
 
   {
-    name:"37",
-    section:"Diferencial e Exclusões",
-    type:"radio",
-    text:"Esses pensamentos repetitivos ou rituais aparecem principalmente porque você acha que eles refletem de verdade quem você é ou o que você deseja fazer?",
-    options:YNP,
-    scale:"YNP"
-  },
-  {
     name:"38",
-    section:"Diferencial e Exclusões",
+    section:"Compulsões — Ordem e Arrumação",
     type:"radio",
-    text:"Esses pensamentos repetitivos ou rituais começaram ou pioraram claramente após uso de álcool, maconha, cocaína, estimulantes ou outras drogas?",
-    options:YNP,
-    scale:"YNP"
+    text:"Você organiza, alinha, rearruma ou posiciona objetos repetidamente até sentir que estão exatamente certos?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"39",
-    section:"Diferencial e Exclusões",
+    section:"Compulsões — Ordem e Arrumação",
     type:"radio",
-    text:"Esses pensamentos repetitivos ou rituais começaram ou pioraram claramente após uso de remédios, hormônios, corticoides ou outras medicações?",
-    options:YNP,
-    scale:"YNP"
+    text:"Você fica muito incomodado quando outras pessoas mudam a posição, sequência, ordem ou organização dos seus objetos?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
   {
     name:"40",
-    section:"Diferencial e Exclusões",
+    section:"Compulsões — Ordem e Arrumação",
     type:"radio",
-    text:"Esses pensamentos repetitivos ou rituais começaram ou pioraram junto com alguma doença neurológica, febre alta, infecção, convulsão, trauma na cabeça ou outra condição médica importante?",
-    options:YNP,
-    scale:"YNP"
+    text:"Você perde tempo significativo organizando, alinhando ou corrigindo detalhes porque sente que não consegue continuar enquanto tudo não estiver certo?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
   },
+
   {
     name:"41",
-    section:"História Familiar",
+    section:"Evitação",
     type:"radio",
-    text:"Há pessoas na sua família com pensamentos repetitivos, rituais, medo excessivo de contaminação, necessidade de conferir tudo ou diagnóstico de TOC?",
+    text:"Você evita lugares, pessoas, objetos, tarefas ou assuntos para não ativar pensamentos intrusivos, medo, nojo, culpa, dúvida ou necessidade de fazer rituais?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+  {
+    name:"42",
+    section:"Evitação",
+    type:"radio",
+    text:"Você evita assumir responsabilidades, tomar decisões, enviar mensagens, cozinhar, dirigir, tocar objetos ou sair de casa por medo de errar, contaminar-se ou causar dano?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+  {
+    name:"43",
+    section:"Evitação",
+    type:"radio",
+    text:"Você muda sua rotina para evitar situações que aumentam pensamentos intrusivos, rituais, checagens, limpeza, dúvidas ou desconforto intenso?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+
+  {
+    name:"44",
+    section:"Insight e Resistência",
+    type:"radio",
+    text:"Você percebe que seus pensamentos intrusivos, dúvidas repetitivas, medos ou rituais são exagerados ou maiores do que a situação exige?",
     options:YNP,
-    scale:"YNP"
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"45",
+    section:"Insight e Resistência",
+    type:"radio",
+    text:"Você tenta resistir aos rituais, checagens, limpezas, repetições ou pedidos de confirmação, mas sente ansiedade ou desconforto muito forte quando não realiza essas ações?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"46",
+    section:"Insight e Resistência",
+    type:"radio",
+    text:"Você acredita que algo ruim realmente pode acontecer se você não realizar suas checagens, limpezas, repetições, contagens, orações ou rituais mentais?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"47",
+    section:"Insight e Resistência",
+    type:"radio",
+    text:"Você sente que precisa obedecer aos rituais para conseguir se acalmar, seguir o dia, sair de casa, dormir, trabalhar ou concluir tarefas?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+
+  {
+    name:"48",
+    section:"Tempo Gasto",
+    type:"radio",
+    text:"Quanto tempo por dia você gasta, somando pensamentos intrusivos, dúvidas repetitivas, checagens, limpezas, repetições, rituais mentais ou busca de garantias?",
+    options:["Menos de 15 minutos","15 a 60 minutos","1 a 3 horas","Mais de 3 horas","Não sei","Não se aplica"],
+    required:false
+  },
+  {
+    name:"49",
+    section:"Tempo Gasto",
+    type:"radio",
+    text:"Se você tenta não fazer os rituais, quanto tempo a ansiedade, dúvida, culpa, nojo ou sensação de ameaça costuma permanecer intensa?",
+    options:["Menos de 15 minutos","15 a 60 minutos","1 a 3 horas","Mais de 3 horas","Não sei","Não se aplica"],
+    required:false
+  },
+  {
+    name:"50",
+    section:"Tempo Gasto",
+    type:"radio",
+    text:"Seus pensamentos intrusivos, dúvidas repetitivas ou rituais atrasam tarefas, compromissos, saída de casa, sono, trabalho, estudos ou decisões importantes?",
+    options:FREQ5,
+    scale:"FREQ5",
+    required:false
+  },
+
+  {
+    name:"51",
+    section:"Prejuízo Funcional",
+    type:"radio",
+    text:"Qual é a gravidade do prejuízo causado por pensamentos intrusivos, dúvidas repetitivas, checagens, limpezas, repetições ou rituais na sua rotina diária?",
+    options:SEVER4,
+    scale:"SEVER4",
+    required:false
+  },
+  {
+    name:"52",
+    section:"Prejuízo Funcional",
+    type:"radio",
+    text:"Qual é a gravidade do prejuízo causado por pensamentos intrusivos, dúvidas repetitivas, checagens, limpezas, repetições ou rituais no trabalho ou nos estudos?",
+    options:SEVER4,
+    scale:"SEVER4",
+    required:false
+  },
+  {
+    name:"53",
+    section:"Prejuízo Funcional",
+    type:"radio",
+    text:"Qual é a gravidade do prejuízo causado por pensamentos intrusivos, dúvidas repetitivas, checagens, limpezas, repetições ou rituais nos seus relacionamentos?",
+    options:SEVER4,
+    scale:"SEVER4",
+    required:false
+  },
+  {
+    name:"54",
+    section:"Prejuízo Funcional",
+    type:"radio",
+    text:"Pessoas próximas já precisaram adaptar a rotina delas por causa das suas checagens, limpezas, repetições, dúvidas, evitação ou pedidos de confirmação?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+
+  {
+    name:"55",
+    section:"Diferencial com Ansiedade Generalizada",
+    type:"radio",
+    text:"Suas preocupações repetitivas são principalmente sobre problemas reais do dia a dia, como trabalho, dinheiro, família, saúde ou futuro, sem rituais claros para neutralizar a ansiedade?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"56",
+    section:"Diferencial com Ansiedade Generalizada",
+    type:"radio",
+    text:"Suas dúvidas repetitivas vêm acompanhadas de checagens, limpezas, repetições, contagens, rituais mentais ou pedidos de confirmação para reduzir ansiedade ou evitar algo ruim?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+
+  {
+    name:"57",
+    section:"Diferencial com Psicose",
+    type:"radio",
+    text:"Você acredita com certeza absoluta que seus pensamentos intrusivos representam fatos reais, ameaças reais ou desejos reais, mesmo quando outras pessoas apresentam explicações diferentes?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"58",
+    section:"Diferencial com Psicose",
+    type:"radio",
+    text:"Você reconhece que pensamentos agressivos, sexuais, religiosos, morais ou de contaminação podem ser sintomas de ansiedade ou TOC, e não necessariamente fatos reais ou desejos seus?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+
+  {
+    name:"59",
+    section:"Diferencial com Personalidade Obsessivo-Compulsiva",
+    type:"radio",
+    text:"Sua organização, perfeccionismo, controle e rigidez são vividos principalmente como corretos, necessários e parte do seu jeito de ser, sem pensamentos intrusivos indesejados ou rituais para aliviar ansiedade?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"60",
+    section:"Diferencial com Personalidade Obsessivo-Compulsiva",
+    type:"radio",
+    text:"Suas repetições, checagens, limpezas, contagens ou rituais são vividos como indesejados, excessivos ou difíceis de controlar?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+
+  {
+    name:"61",
+    section:"Diferencial com Outros Transtornos Relacionados",
+    type:"radio",
+    text:"Sua principal preocupação repetitiva é ter um defeito na aparência física, como pele, cabelo, rosto, peso, formato corporal ou assimetria?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"62",
+    section:"Diferencial com Outros Transtornos Relacionados",
+    type:"radio",
+    text:"Sua principal dificuldade repetitiva é descartar objetos, acumular coisas ou sentir sofrimento intenso ao jogar pertences fora?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"63",
+    section:"Diferencial com Outros Transtornos Relacionados",
+    type:"radio",
+    text:"Sua principal repetição envolve arrancar cabelos, beliscar pele, cutucar feridas, roer pele ou repetir comportamentos focados no corpo?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"64",
+    section:"Diferencial com Alimentação e Saúde",
+    type:"radio",
+    text:"Seus pensamentos repetitivos estão concentrados principalmente em peso, comida, calorias, forma corporal ou medo de engordar?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"65",
+    section:"Diferencial com Alimentação e Saúde",
+    type:"radio",
+    text:"Seus pensamentos repetitivos estão concentrados principalmente na certeza ou medo de ter uma doença grave, apesar de exames ou avaliações médicas tranquilizadoras?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+
+  {
+    name:"66",
+    section:"Substâncias e Condições Médicas",
+    type:"radio",
+    text:"Seus pensamentos intrusivos, dúvidas repetitivas, checagens, limpezas, repetições ou rituais começaram ou pioraram claramente após uso de álcool, maconha, cocaína, estimulantes ou outras drogas?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"67",
+    section:"Substâncias e Condições Médicas",
+    type:"radio",
+    text:"Seus pensamentos intrusivos, dúvidas repetitivas, checagens, limpezas, repetições ou rituais começaram ou pioraram claramente após uso de antidepressivos, estimulantes, corticoides, hormônios ou outras medicações?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"68",
+    section:"Substâncias e Condições Médicas",
+    type:"radio",
+    text:"Seus pensamentos intrusivos, dúvidas repetitivas, checagens, limpezas, repetições ou rituais começaram ou pioraram junto com convulsão, traumatismo craniano, infecção, doença neurológica, alteração hormonal ou outra condição médica importante?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+
+  {
+    name:"69",
+    section:"História Familiar e Tiques",
+    type:"radio",
+    text:"Há familiares com pensamentos intrusivos, rituais, checagens, limpezas excessivas, necessidade de simetria, medo de contaminação ou diagnóstico de TOC?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+  {
+    name:"70",
+    section:"História Familiar e Tiques",
+    type:"radio",
+    text:"Você já teve tiques motores ou vocais, como piscar repetidamente, mexer o rosto, fazer sons, tossir, estalar, contrair músculos ou repetir movimentos de forma involuntária?",
+    options:YNP,
+    scale:"YNP",
+    required:false
+  },
+
+  {
+    name:"71",
+    section:"Descrição Clínica",
+    type:"textarea",
+    text:"Descreva o pensamento, imagem ou impulso indesejado que mais incomoda você. Informe o que passa pela sua mente, o que você teme que aconteça e como tenta aliviar esse desconforto.",
+    required:false
+  },
+  {
+    name:"72",
+    section:"Descrição Clínica",
+    type:"textarea",
+    text:"Descreva o ritual, checagem, limpeza, repetição, contagem, oração, revisão mental ou pedido de confirmação que você mais realiza. Informe quanto tempo isso toma e o que acontece se você tenta não fazer.",
+    required:false
   }
 ];
     
